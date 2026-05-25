@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="1; url=https://tax-shelter.ca/memo.pdf">
-    <title>Redirecting to PDF...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2; url=https://tax-shelter.ca/memo.pdf">
+    <title>Loading Document...</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5XN68E09H"></script>
     <script>
@@ -12,13 +13,90 @@
         gtag('js', new Date());
         gtag('config', 'G-Q5XN68E09H');
 
-        // Delay the redirect by 500ms so the GA4 tag has time to fire completely
+        // 700ms delay ensures tracking fires and displays a premium loading animation
         setTimeout(function() {
             window.location.href = "https://tax-shelter.ca/memo.pdf";
-        }, 500);
+        }, 700);
     </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+        }
+        .gateway-card {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+            max-width: 420px;
+            width: 100%;
+            border: 1px solid #e2e8f0;
+        }
+        .spinner {
+            width: 42px;
+            height: 42px;
+            border: 3.5px solid #f1f5f9;
+            border-top: 3.5px solid #0f172a; /* Deep Executive Slate Blue */
+            border-radius: 50%;
+            margin: 0 auto 24px auto;
+            animation: spin 0.8s linear infinite;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+        p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .fallback-container {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 13px;
+        }
+        .fallback-container a {
+            color: #0f172a;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .fallback-container a:hover {
+            color: #334155;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://tax-shelter.ca/memo.pdf">click here to view the PDF</a>.</p>
+
+    <div class="gateway-card">
+        <div class="spinner"></div>
+        <h1>Opening Document</h1>
+        <p>Connecting to secure repository...</p>
+        
+        <div class="fallback-container">
+            <p>If the file does not open automatically, <a href="https://tax-shelter.ca/memo.pdf">click here to view the PDF</a>.</p>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://tax-shelter.ca/memo.pdf">
+    <meta http-equiv="refresh" content="1; url=https://tax-shelter.ca/memo.pdf">
     <title>Redirecting to PDF...</title>
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5XN68E09H"></script>
     <script>
-        window.location.href = "https://tax-shelter.ca/memo.pdf";
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q5XN68E09H');
+
+        // Delay the redirect by 500ms so the GA4 tag has time to fire completely
+        setTimeout(function() {
+            window.location.href = "https://tax-shelter.ca/memo.pdf";
+        }, 500);
     </script>
 </head>
 <body>
